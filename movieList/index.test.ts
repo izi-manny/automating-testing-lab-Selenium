@@ -14,10 +14,10 @@ afterAll(async () => {
     await driver.quit()
 })
 
-test('add a movie to the page', async () => {
-    let movieField = await driver.findElement(By.css('input'))
+test('should add a movie to the page', async () => {
+    await driver.findElement(By.css('input')).sendKeys('Star Wars')
 
-    await movieField.sendKeys('Star Wars\n')
+    await driver.findElement(By.css('button')).click()
 
     await driver.sleep(3000)
 })
